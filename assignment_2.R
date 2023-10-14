@@ -37,3 +37,9 @@ summary_stats_top_neighborhoods <- summary_stats_top_neighborhoods %>% rename(
 
 summary_stats_top_neighborhoods <- summary_stats_top_neighborhoods %>% arrange(
   desc(avg_square_feet))
+
+#d
+highest_avg_square_ft <- summary_stats_top_neighborhoods["avg_square_feet"] %>% slice(1)
+
+#e
+second_avg_price <- summary_stats_top_neighborhoods["avg_price"] %>% slice(2)
