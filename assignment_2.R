@@ -33,9 +33,12 @@ summary_stats_top_neighborhoods <- airbnb_top_neighborhoods %>% group_by(neighbo
   summarize(mean(square_feet, na.rm = TRUE), mean(price, na.rm = TRUE), 
             sd(price, na.rm = TRUE), max(price, na.rm = TRUE), min(price, na.rm = TRUE))
 
-summary_stats_top_neighborhoods <- summary_stats_top_neighborhoods %>% rename("avg_square_feet" =  "mean(square_feet, na.rm = TRUE)",
-                                                                              "avg_price" = "mean(price, na.rm = TRUE)",
-                                                                              "sd_price" = "sd(price, na.rm = TRUE)",
-                                                                              "max_price" = "max(price, na.rm = TRUE)",
-                                                                              "min_price" = "min(price, na.rm = TRUE)")
-summary_stats_top_neighborhoods <- summary_stats_top_neighborhoods %>% arrange(desc(avg_square_feet))
+summary_stats_top_neighborhoods <- summary_stats_top_neighborhoods %>% rename(
+  "avg_square_feet" =  "mean(square_feet, na.rm = TRUE)", 
+  "avg_price" = "mean(price, na.rm = TRUE)",
+  "sd_price" = "sd(price, na.rm = TRUE)",
+  "max_price" = "max(price, na.rm = TRUE)",
+  "min_price" = "min(price, na.rm = TRUE)")
+
+summary_stats_top_neighborhoods <- summary_stats_top_neighborhoods %>% arrange(
+  desc(avg_square_feet))
