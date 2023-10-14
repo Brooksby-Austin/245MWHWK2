@@ -11,7 +11,7 @@ PERMID <- as.numeric(gsub("\\D", "", PERMID)) #Don't touch
 set.seed(PERMID) #Don't touch
 
 #1
-airbnb <- read.csv("airbnb_data.csv")
+airbnb <- read_csv("airbnb_data.csv")
 airbnb <- airbnb %>% rename("neighborhood" = "neighbourhood")
 
 #2
